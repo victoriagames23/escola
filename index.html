@@ -3,53 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colégio Estadual São Cristóvão | Excelência no Ensino</title>
+    <title>Colégio Estadual São Cristóvão</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <header id="header">
         <nav class="container">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i> CE <span>São Cristóvão</span>
-            </div>
+            <div class="logo">CE <span>São Cristóvão</span></div>
             <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#contato" class="btn-nav">Contato</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#info">Informações</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <span class="badge">Matrículas Abertas 2026</span>
-                <h1>Tradição e Inovação no Coração da Comunidade</h1>
-                <p>Oferecemos um ambiente seguro e estimulante para o desenvolvimento intelectual e social dos nossos alunos.</p>
-                <div class="hero-btns">
-                    <a href="#cursos" class="btn primary">Nossos Cursos</a>
-                    <a href="#contato" class="btn secondary">Fale Conosco</a>
-                </div>
-            </div>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="reveal">Educação de Excelência</h1>
+            <p class="reveal">Construindo o futuro através do conhecimento no coração de nossa comunidade.</p>
+            <a href="#info" class="btn-main reveal">Ver Cursos</a>
         </div>
     </section>
 
-    <section id="sobre" class="container stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <i class="fas fa-users"></i>
-                <h3>1200+</h3>
-                <p>Alunos Ativos</p>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3>80+</h3>
-                <p>Professores Especialistas</p>
-            </div>
-            <div class="stat-item">
+    <section id="historia" class="section">
+        <div class="container">
+            <h2 class="section-title">Nossa Jornada</h2>
+            <div class="history-flex">
+                <div class="text-box reveal">
+                    <p>O <strong>Colégio Estadual São Cristóvão</strong> nasceu da necessidade de oferecer um ensino público digno e transformador. Desde sua fundação, temos sido o pilar educacional do bairro, evoluindo de uma
