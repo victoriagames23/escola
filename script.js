@@ -1,20 +1,17 @@
-// Efeito de rolagem suave para os links internos
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+// Efeito de Revelação ao Rolar (Scroll Reveal simplificado)
+const observerOptions = {
+    threshold: 0.1
+};
 
-// Mensagem de boas-vindas no console
-console.log("Site do Colégio Estadual São Cristóvão carregado com sucesso!");
-
-// Exemplo de interatividade: Alerta ao clicar nos cards de cursos
-const cards = document.querySelectorAll('.card');
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        alert("Em breve traremos mais detalhes sobre este nível de ensino!");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
     });
-});
+}, observerOptions);
+
+// Aplicar animação inicial aos elementos
+document.querySelectorAll('.stat-item, .gallery-item, .news-card').forEach(el => {
+    el.style.opacity
