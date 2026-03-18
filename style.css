@@ -2,7 +2,7 @@
     --primary-color: #004aad; /* Azul Vibrante */
     --secondary-color: #ffde59; /* Amarelo Solar */
     --text-color: #333;
-    --bg-color: #f4f4f4;
+    --bg-color:#1E90FF;
 }
 
 body.dark-theme {
