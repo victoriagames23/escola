@@ -1,114 +1,109 @@
 :root {
-    --primary-color: #004aad; /* Azul Vibrante */
-    --secondary-color: #ffde59; /* Amarelo Solar */
-    --text-color: #333;
-    --bg-color:#1E90FF;
+    --primary: #004a99;
+    --accent: #ffcc00;
+    --bg: #ffffff;
+    --text: #333333;
+    --card: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-body.dark-theme {
-    --bg-color: #1a1a1a;
-    --text-color: #fff;
-    --primary-color: #3d85c6;
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #e0e0e0;
+    --card: #1e1e1e;
+    --primary: #3399ff;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var/(--bg-color);
-    color: var(--text-color);
-    transition: 0.3s;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
 header {
-    background: var(--primary-color);
-    color: white;
-    padding: 1rem 5%;
+    background: var(--primary);
+    padding: 1rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    box-shadow: var(--shadow);
+    z-index: 100;
 }
 
-.logo { font-size: 1.8rem; font-weight: bold; }
-
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 20px; }
-nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+nav ul { display: flex; list-style: none; gap: 2rem; }
+nav a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+nav a:hover { color: var(--accent); }
 
 .hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523050335392-9ae86774929f?auto=format&fit=crop&w=1350&q=80');
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     text-align: center;
+    color: white;
 }
 
 .btn-principal {
-    background: var(--secondary-color);
-    color: #333;
-    padding: 12px 25px;
+    background: var(--accent);
+    color: #000;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
+    font-weight: 700;
+    transition: transform 0.2s;
     display: inline-block;
-    margin-top: 20px;
 }
 
+.btn-principal:hover { transform: scale(1.05); }
+
 .cards-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 5%;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 5rem 10%;
 }
 
 .card {
-    background: white;
-    padding: 30px;
+    background: var(--card);
+    padding: 2.5rem;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    flex: 1;
-    min-width: 250px;
+    box-shadow: var(--shadow);
     text-align: center;
-    border-top: 5px solid var(--secondary-color);
-    color: #333;
+    border-bottom: 4px solid var(--primary);
 }
 
 .contato {
-    padding: 50px 5%;
-    background: var(--primary-color);
+    background: var(--card);
+    padding: 5rem 10%;
+    max-width: 800px;
+    margin: 4rem auto;
+    border-radius: 20px;
+}
+
+#form-contato { display: grid; gap: 1rem; }
+input, textarea {
+    padding: 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button[type="submit"] {
+    background: var(--primary);
     color: white;
-    text-align: center;
-}
-
-#form-contato {
-    max-width: 500px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#form-contato input, #form-contato textarea {
-    padding: 12px;
-    border-radius: 5px;
     border: none;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }
