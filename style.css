@@ -1,109 +1,128 @@
-:root {
-    --primary: #004a99;
-    --accent: #ffcc00;
-    --bg: #ffffff;
-    --text: #000000;
-    --card: #ffffff;
-    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-[data-theme="dark"] {
-    --bg: #121212;
-    --text: #e0e0e0;
-    --card: #1e1e1e;
-    --primary: #3399ff;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
     line-height: 1.6;
-    transition: all 0.3s ease;
+    color: #333;
+    background-color: #f4f7f6;
 }
 
+/* Navegação */
 header {
-    background: DodgerBlue(--primary);
-    padding: 1rem 10%;
+    background: #004080;
+    color: white;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    box-shadow: var(--shadow);
-    z-index: 100;
 }
 
-nav ul { display: flex; list-style: none; gap: 2rem; }
-nav a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
-nav a:hover { color: var(--accent); }
-
-.hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
+nav ul {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
     color: white;
-}
-
-.btn-principal {
-    background: var(--accent);
-    color: #000;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
     text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.2s;
-    display: inline-block;
+    font-weight: bold;
 }
 
-.btn-principal:hover { transform: scale(1.05); }
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 5rem 10%;
-}
-
-.card {
-    background: var(--card);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
+/* Hero Section */
+#hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
     text-align: center;
-    border-bottom: 4px solid var(--primary);
+    margin-top: 60px;
 }
 
-.contato {
-    background: var(--card);
-    padding: 5rem 10%;
-    max-width: 800px;
-    margin: 4rem auto;
-    border-radius: 20px;
+.btn-primary {
+    background: #ffcc00;
+    color: #004080;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-#form-contato { display: grid; gap: 1rem; }
-input, textarea {
-    padding: 1rem;
-    border: 1.5px solid #ddd;
-    border-radius: 8px;
-    background: var(--bg);
-    color: var(--text);
+/* Formulário */
+#matricula {
+    padding: 50px 5%;
+    display: flex;
+    justify-content: center;
 }
 
-button[type="submit"] {
-    background: var(--primary);
+.container-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #004080;
     color: white;
     border: none;
-    padding: 1rem;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #002d5a;
+}
+
+.hidden { display: none; }
+
+#mensagemSucesso {
+    margin-top: 20px;
+    padding: 15px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    text-align: center;
 }
